@@ -1,3 +1,4 @@
+import './RobotList.css';
 
 const { useState, useEffect, use } = require("react");
 function RobotsList() {
@@ -27,7 +28,7 @@ function RobotsList() {
     return (
         <div className="container">
             <div className='row'>
-                <div className='col-7'>
+                <div className='col-8'>
                 <table className="table">
                             <thead>
                                 <tr className="table-dark">
@@ -50,18 +51,17 @@ function RobotsList() {
                             </table>
                 </div>
 
-                <div className="col-5">
+                <div className="col-4">
                 {detalle ? (
-                        <div className="card">
-                            <img src={robotSeleccionado.imagen + "?raw=true"} className="card-img-top" alt="..." />
+                        <div className="card" style={{padding: "0 1em", backgroundColor: '#D9D9D980', borderRadius: '0', border:  '1px solid black'}}>
+                            <h5 className="card-title" style={{fontWeight: 'bold', textAlign: 'center', marginTop: "1em"}}>{robotSeleccionado.nombre}</h5>
+                            <img src={robotSeleccionado.imagen + "?raw=true"} style={{width: '50%', margin: '0 auto', border: '1px solid black', borderRadius: '0'}} className="card-img-top" alt={"Imagen de " + robotSeleccionado.nombre} />
                             <div className="card-body">
-                                <h5 className="card-title">{robotSeleccionado.nombre}</h5>
-                                <p className="card-text">Modelo: {robotSeleccionado.modelo}</p>
-                                <p className="card-text">Empresa Fabricante: {robotSeleccionado.empresaFabricante}</p>
-                                <p className="card-text">Año de Fabricación: {robotSeleccionado.añoFabricacion}</p>
-                                <p className="card-text">Capacidad de Procesamiento: {robotSeleccionado.capacidadProcesamiento}</p>
-                                <p className="card-text">Humor: {robotSeleccionado.humor}</p>
+                                <p className="card-text"><strong>-> Año de Fabricación:</strong> {robotSeleccionado.añoFabricacion}</p>
+                                <p className="card-text"><strong>-> Capacidad de Procesamiento:</strong> {robotSeleccionado.capacidadProcesamiento}</p>
+                                <p className="card-text"><strong>-> Humor:</strong> {robotSeleccionado.humor}</p>
                             </div>
+                        
                     </div>
                 ) : (<></>)}
                 </div>
