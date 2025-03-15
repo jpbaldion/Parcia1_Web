@@ -45,30 +45,32 @@ function Autentificacion(){
     }
 
     return(
-        <div className="container">
-            <h1 style={{textAlign: "center"}}>Inicio sesion</h1>
+        <div className="container" style={{maxWidth: "500px", margin: "auto", padding: "2em"}}>
+            <h3 style={{textAlign: "center", marginBottom: "1em", fontWeight: '700'}}>Inicio de sesión</h3>
 
             <Form>
                 <Form.Group className="mb-6" controlId="formBasicText">
-                <Form.Label>Nombre de Usuario</Form.Label>
-                <Form.Control type="text" placeholder="" onChange={handleNameChange} value={formValues.login}/>
+                <Form.Label style={{fontWeight: 'bold'}}>Nombre de Usuario</Form.Label>
+                <Form.Control style={{borderRadius: '0', backgroundColor: '#D9D9D9'}} type="text" placeholder="" onChange={handleNameChange} value={formValues.login}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Contraseña</Form.Label>
-                <Form.Control type="password" placeholder="" onChange={handlePasswordChange} value={formValues.password} />
+                <Form.Label style={{fontWeight: 'bold'}}>Contraseña</Form.Label>
+                <Form.Control type="password" placeholder="" onChange={handlePasswordChange} value={formValues.password} style={{borderRadius: '0', backgroundColor: '#D9D9D9'}} />
                 </Form.Group>
-                <Button variant="primary" onClick={handleSubmit}>
-                Ingresar
-                </Button>
-                <Button variant="danger">
-                Cancelar
-                </Button>
+                <div display="flex" style={{display: "flex", justifyContent: "space-between", gap: "2em"}}>
+                    <Button style={{width: '100%', borderRadius:'0', backgroundColor: '#003B93', fontWeight: 'bold'}} variant="primary" onClick={handleSubmit}>
+                    Ingresar
+                    </Button>
+                    <Button style={{width: '100%', borderRadius:'0', backgroundColor: "#E75D5D", fontWeight: 'bold', color: 'black'}} variant="danger">
+                    Cancelar
+                    </Button>
+                </div>
                 {/* Mensaje de contrase;a incorrecta */}
                 {inicioIncorrecto ? (
-                    <Alert variant="danger">
-                        <Alert.Heading>Verifica tus Credenciales</Alert.Heading>
-                    </Alert>
+                    <p style={{color: '#E75D5D', fontWeight: 'bold', marginTop: '1em'}}>
+                        Error de autenticación. Revise sus credenciales
+                    </p>
                 ): <></>}
                 
             </Form>
