@@ -1,0 +1,14 @@
+{
+    "username": "Username",
+    "password": "Password",
+    "signIn": "Sign in",
+    "cancel": "Cancel",
+    "login": "Log in",
+    "error": "Authentication error. Check your credentials.",
+    "nombre": "Name",
+    "modelo": "Model",
+    "empresa": "Manufacturer",
+    "anio": "Year of Manufacture",
+    "procesamiento": "Processing Capacity",
+    "humor": "Mood"
+}

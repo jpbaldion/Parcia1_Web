@@ -1,0 +1,14 @@
+{
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "signIn": "Iniciar sesión",
+    "cancel": "Cancelar",
+    "login": "Ingresar",
+    "error": "Error de autenticación. Revise sus credenciales.",
+    "nombre": "Nombre",
+    "modelo": "Modelo",
+    "empresa": "Empresa Fabricante",
+    "anio": "Año de Fabricación",
+    "procesamiento": "Capacidad de Procesamiento",
+    "humor": "Humor"
+}

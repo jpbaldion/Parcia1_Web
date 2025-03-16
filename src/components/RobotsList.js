@@ -1,4 +1,5 @@
 import './RobotList.css';
+import { FormattedMessage } from 'react-intl';
 
 const { useState, useEffect, use } = require("react");
 function RobotsList() {
@@ -33,9 +34,9 @@ function RobotsList() {
                             <thead>
                                 <tr className="table-dark">
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Modelo</th>
-                                <th scope="col">Empresa Fabricante</th>
+                                <th scope="col"><FormattedMessage id="nombre"/></th>
+                                <th scope="col"><FormattedMessage id="modelo"/></th>
+                                <th scope="col"><FormattedMessage id="empresa"/></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,9 +58,9 @@ function RobotsList() {
                             <h5 className="card-title" style={{fontWeight: 'bold', textAlign: 'center', marginTop: "1em"}}>{robotSeleccionado.nombre}</h5>
                             <img src={robotSeleccionado.imagen + "?raw=true"} style={{width: '50%', margin: '0 auto', border: '1px solid black', borderRadius: '0'}} className="card-img-top" alt={"Imagen de " + robotSeleccionado.nombre} />
                             <div className="card-body">
-                                <p className="card-text"><strong>-> Año de Fabricación:</strong> {robotSeleccionado.añoFabricacion}</p>
-                                <p className="card-text"><strong>-> Capacidad de Procesamiento:</strong> {robotSeleccionado.capacidadProcesamiento}</p>
-                                <p className="card-text"><strong>-> Humor:</strong> {robotSeleccionado.humor}</p>
+                                <p className="card-text"><strong>-> <FormattedMessage id="anio"/></strong> {robotSeleccionado.añoFabricacion}</p>
+                                <p className="card-text"><strong>-> <FormattedMessage id="procesamiento"/></strong> {robotSeleccionado.capacidadProcesamiento}</p>
+                                <p className="card-text"><strong>-> <FormattedMessage id="humor"/></strong> {robotSeleccionado.humor}</p>
                             </div>
                         
                     </div>

@@ -1,6 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { Alert } from "react-bootstrap";
+import { FormattedMessage } from "react-intl";
 
 function Autentificacion(){
     const apiURL = "http://localhost:3001"
@@ -46,30 +47,30 @@ function Autentificacion(){
 
     return(
         <div className="container" style={{maxWidth: "500px", margin: "auto", padding: "2em"}}>
-            <h3 style={{textAlign: "center", marginBottom: "1em", fontWeight: '700'}}>Inicio de sesión</h3>
+            <h3 style={{textAlign: "center", marginBottom: "1em", fontWeight: '700'}}><FormattedMessage id="signIn"/></h3>
 
             <Form>
                 <Form.Group className="mb-6" controlId="formBasicText">
-                <Form.Label style={{fontWeight: 'bold'}}>Nombre de Usuario</Form.Label>
+                <Form.Label style={{fontWeight: 'bold'}}><FormattedMessage id="username"/></Form.Label>
                 <Form.Control style={{borderRadius: '0', backgroundColor: '#D9D9D9'}} type="text" placeholder="" onChange={handleNameChange} value={formValues.login}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label style={{fontWeight: 'bold'}}>Contraseña</Form.Label>
+                <Form.Label style={{fontWeight: 'bold'}}><FormattedMessage id="password"/></Form.Label>
                 <Form.Control type="password" placeholder="" onChange={handlePasswordChange} value={formValues.password} style={{borderRadius: '0', backgroundColor: '#D9D9D9'}} />
                 </Form.Group>
                 <div display="flex" style={{display: "flex", justifyContent: "space-between", gap: "2em"}}>
                     <Button style={{width: '100%', borderRadius:'0', backgroundColor: '#003B93', fontWeight: 'bold'}} variant="primary" onClick={handleSubmit}>
-                    Ingresar
+                    <FormattedMessage id="login"/>
                     </Button>
                     <Button style={{width: '100%', borderRadius:'0', backgroundColor: "#E75D5D", fontWeight: 'bold', color: 'black'}} variant="danger">
-                    Cancelar
+                    <FormattedMessage id="cancel"/>
                     </Button>
                 </div>
                 {/* Mensaje de contrase;a incorrecta */}
                 {inicioIncorrecto ? (
                     <p style={{color: '#E75D5D', fontWeight: 'bold', marginTop: '1em'}}>
-                        Error de autenticación. Revise sus credenciales
+                        <FormattedMessage id="error"/>
                     </p>
                 ): <></>}
                 
